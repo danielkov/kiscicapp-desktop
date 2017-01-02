@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html data-ng-app="kisCicApp">
+  <head>
+    <meta charset="utf-8">
+    <title>KisCicApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="./js/app.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <section class="pc-side-section mobile-top-section">
+        <header class="statusbar">
+          <img src="./img/<%= user.thumbnail %>" alt="" class="thumbnail circle">
+          <span><%= user.name %></span>
+        </header>
+        <div class="cat-holder">
+          <img src="./img/xmas-cat.svg" alt="" class="cat-image image-large">
+          <h1><%= greeting %></h1>
+          <p><%= date %></p>
+        </div>
+      </section>
+      <main class="main-content">
+        <index-news></index-news>
+        <weather-component></weather-component>
+        <origo-news></origo-news>
+        <footer class="bottom-footer">
+          <b>Created by: Egy Tiglinc aki Szeret!</b>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

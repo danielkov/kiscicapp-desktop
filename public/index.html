@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html data-ng-app="kisCicApp">
+  <head>
+    <meta charset="utf-8">
+    <title>KisCicApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <script type="text/javascript">
+      require('angular');
+    </script>
+    <script src="./js/app.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <header class="title-bar">
+      <p>KisCicApp</p>
+    </header>
+    <div class="title-bar-placeholder">
+
+    </div>
+    <div class="wrapper">
+      <section class="pc-side-section mobile-top-section">
+        <header class="statusbar">
+          <img src="./img/thumbnail-cica.jpg" alt="" class="thumbnail circle">
+          <span>Bogyo</span>
+        </header>
+        <div class="cat-holder">
+          <img src="./img/xmas-cat.svg" alt="" class="cat-image image-large">
+          <h1><script type="text/javascript">
+const months = ['Január', 'Február', 'Március', 'Április', 'Május', 'Június', 'Július', 'Augusztus', 'Szeptember', 'Október', 'November', 'December']
+
+let d = new Date();
+
+function easterForYear (year) {
+  var a = year % 19;
+  var b = Math.floor(year / 100);
+  var c = year % 100;
+  var d = Math.floor(b / 4);
+  var e = b % 4;
+  var f = Math.floor((b + 8) / 25);
+  var g = Math.floor((b - f + 1) / 3);
+  var h = (19 * a + b - d - g + 15) % 30;
+  var i = Math.floor(c / 4);
+  var k = c % 4;
+  var l = (32 + 2 * e + 2 * i - h - k) % 7;
+  var m = Math.floor((a + 11 * h + 22 * l) / 451);
+  var n0 = (h + l + 7 * m + 114)
+  var n = Math.floor(n0 / 31) - 1;
+  var p = n0 % 31 + 1;
+  var date = new Date(year,n,p);
+  return date;
+}
+
+function getGreeting (date) {
+  let greetings = {
+    xmas: 'Boldog Karácsonyt!', // dec 24 - 26
+    month: 'Boldog Hónapfordulót!', // every 4th
+    anniversary: 'Boldog Évfordulót!', // okt 4
+    bday: 'Boldog Szülinapot!', // julius 10
+    nameday: 'Boldog Luca Napot!', // dec 13
+    newyear: 'Boldog Újévet!', // jan 1
+    easter: 'Boldog Húsvétot!', // fullrandom
+    womensday: 'Boldog Nők Napjat!', // marc 8
+    other: 'Szép Napot!'
+  }
+  let y = date.getFullYear();
+  let d = date.getDate();
+  let m = date.getMonth();
+  let easter = easterForYear(y);
+  if (d === 4) {
+    return (date.getMonth() === 9) ? greetings['anniversary'] : greetings['month'];
+  }
+  if (m === 0 && d === 1) {
+    return greetings['newyear'];
+  }
+  if (m === 11) {
+    if (d === 13) {
+      return greetings['nameday'];
+    }
+    else if (d > 23 && d < 27) {
+      return greetings['xmas'];
+    }
+  }
+  if (m === 6 && d === 10) {
+    return greetings['bday'];
+  }
+  if (m === 2 && d === 8) {
+    return greetings['womensday'];
+  }
+  if (easter.getMonth() === m && easter.getDate() === d) {
+    return greetings['easter'];
+  }
+  return greetings['other'];
+}
+
+document.write(getGreeting(d))
+          </script></h1>
+          <p><script type="text/javascript">
+            document.write(months[d.getMonth()] + ' ' + d.getDate())
+          </script></p>
+        </div>
+      </section>
+      <main class="main-content">
+        <index-news></index-news>
+        <weather-component></weather-component>
+        <origo-news></origo-news>
+        <footer class="bottom-footer">
+          <b>Created by: Egy Tiglinc aki Szeret!</b>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
